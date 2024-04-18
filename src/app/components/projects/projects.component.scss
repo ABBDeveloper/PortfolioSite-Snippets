@@ -1,0 +1,13 @@
+.project{
+    grid-template-columns: 70% auto;
+}
+
+.disabled-link {
+    color: rgb(161, 161, 161);
+    cursor: default;
+    pointer-events: visible;
+    
+    img{
+        opacity: 0.3;
+    }
+}

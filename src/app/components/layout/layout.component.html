@@ -1,0 +1,26 @@
+<div *ngIf="loading" class="flex justify-center items-center h-screen">
+    <span class="text-xl">Lade Daten...</span>
+</div>
+<div  *ngIf="!loading">
+    <header>
+        <app-navigation id="home"></app-navigation>
+    </header>
+    
+    <main role="main" class="flex flex-col items-center justify-center w-full">
+         <section>
+            <app-home></app-home>
+        </section>
+        <section id="about">
+            <app-about></app-about>
+        </section>
+        <section id="experience">
+            <app-experience></app-experience>
+        </section>
+        <section id="projects">
+            <app-projects></app-projects>
+        </section>
+        <section id="contact">
+            <app-contact></app-contact>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,33 @@
+<nav class="flex items-center justify-center p-8 md:p-12 bg-white gap-18 w-full">
+  <div class="flex flex-row justify-between items-end w-full max-w-6xl">
+    <div class="text-2xl whitespace-nowrap md:px-10 md:text-3xl text-gray-700">{{personalData.fullName}}</div>
+    <div class="hidden md:block px-10 text-xl justify-end">
+      <a [routerLink]="['/portfolio']" fragment="about" class="whitespace-nowrap px-4 py-2 hover:text-gray-500">Über mich</a>
+      <a [routerLink]="['/portfolio']" fragment="experience" class="px-4 py-2 hover:text-gray-500">Erfahrung</a>
+      <a [routerLink]="['/portfolio']" fragment="projects" class="px-4 py-2 hover:text-gray-500">Projekte</a>
+      <a [routerLink]="['/portfolio']" fragment="contact" class="px-4 py-2 hover:text-gray-500">Kontakt</a>
+    </div>
+  </div>
+  <div (click)="logout()" class="hidden md:flex flex-row justify-end items-center rounded-full self-end text-xl  text-end ms-10 me-8 px-4 py-0 gap-1"> 
+    <img class="h-6 w-6" src="/assets/logout-black.png">
+    <span class="align-bottom hover:text-gray-500">Abmelden</span> 
+  </div>
+  <div class="relative inline-block text-left">
+    <div class="md:hidden hamburger-icon w-7" (click)="toggleMenu()">
+      <img [class.hidden]="isHamburgerMenuOpen" src="/assets/menu.png" alt="">
+      <img [class.hidden]="!isHamburgerMenuOpen" src="/assets/close.png" alt="">
+    </div>
+    <div [class.hidden]="!isHamburgerMenuOpen" class="absolute right-0 z-10 mt-2 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none md:hidden flex" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+      <div class="flex flex-col px-7 py-4 text-xl text-center" role="none">
+        <a [routerLink]="['/portfolio']" fragment="about" class="px-2 py-2 hover:text-gray-500" (click)="closeMenu()">Über mich</a>
+        <a [routerLink]="['/portfolio']" fragment="experience" class="px-4 py-2 hover:text-gray-500" (click)="closeMenu()">Erfahrung</a>
+        <a [routerLink]="['/portfolio']" fragment="projects" class="px-4 py-2 hover:text-gray-500" (click)="closeMenu()">Projekte</a>
+        <a [routerLink]="['/portfolio']" fragment="contact" class="px-4 py-2 hover:text-gray-500" (click)="closeMenu()">Kontakt</a>
+        <button (click)="logout()"class="flex flex-row justify-center items-center px-4 py-2 mt-3 mb-2 rounded-full bg-black hover:bg-gray-700 text-base gap-1"> 
+          <img class="h-4 w-4" src="/assets/logout.png">
+          <p class="text-white ">Abmelden</p> 
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

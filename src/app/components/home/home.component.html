@@ -1,0 +1,19 @@
+<div class="flex flex-col items-center justify-center gap-8 md:gap-20 pt-2 pb-10 md:pb-20 mx-10 bg-transparent md:flex-row max-w-6xl min-h-screen">
+  <img class="block mx-auto w-48 h-auto md:w-96 rounded-full" *ngIf="cvPhotoUrl" [src]="cvPhotoUrl" alt="CV_Photo">
+  <div class="text-center md:text-center">
+    <div class="flex flex-row justify-center md:flex-col text-xl">
+      <p class="md:text-base font-bold text-gray-600 md:mb-2 mb-0">Hi, ich bin&nbsp;</p>
+      <p class="md:text-5xl font-bold">{{personalData.home.name}}</p>
+    </div>
+    <p class="whitespace-nowrap text-xl md:text-2xl font-bold text-gray-600 mt-2 mb-4">{{personalData.home.profession}}</p>
+    <div class="flex flex-col md:flex-row gap-4 mt-2">
+      <a class="md:w-28 whitespace-nowrap text-black text-xs border border-black hover:bg-gray-900 hover:text-white font-bold p-4 rounded-full" *ngIf="cvUrl" [href]="cvUrl" download="CV.pdf">Download CV</a>
+      <a class="md:w-28 whitespace-nowrap bg-black text-xs hover:bg-gray-700 text-white font-bold p-4 rounded-full" [routerLink]="['/portfolio']" fragment="contact">Kontakt Info</a>
+    </div>
+    <div class="flex justify-center md:flex-row gap-4">
+      <a href="{{personalData.home.githubLink}}" target="_blank">
+          <img class="h-12 w-auto my-2 mx-10" src="/assets/github.jpg" alt="github icon">
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="flex flex-col max-w-3xl md:max-w-6xl items-center justify-center min-h-screen mb-32">
+    <div #sectionRef class="flex flex-col my-2 md:mb-6 md:mt-0 justify-center items-center bg-transparent p-6">
+        <div class="flex flex-col justify-center items-center my-2 md:my-10 gap-2 md:gap-4">
+            <p class="text-sm text-gray-500 ">Einblick in meine</p>
+            <p class="text-3xl md:text-5xl font-bold mb-4">Erfahrung</p>  
+        </div>
+        <div class="flex flex-col gap-8">
+            <div class="flex flex-col  md:grid md:grid-cols-2 gap-8 mt-10">
+                <!-- Backend Box -->
+                <div class="flex flex-col items-center px-4 py-6 md:p-6 border-2 rounded-3xl border-gray-300">
+                    <p class="whitespace-nowrap px-5 md:mx-5 text-xl md:text-2xl text-gray-600 font-semibold mb-8">Backend Development</p>
+                    <div class="grid grid-cols-2 md:grid-cols-2 gap-5 md:gap-6 text-start text-lg">
+                        <div *ngFor="let exp of personalData.backendExperience" class="flex items-start py-1 md:py-0 mx-2 md:mx-10">
+                            <img class="h-6 w-6 my-1" src={{exp.iconSrc}} alt="">
+                            <div class="grid grid-rows-2 mx-2 md:mx-4">
+                                <p class="text-base md:text-lg font-bold">{{exp.name}}</p>
+                                <p class="text-xs md:text-sm mb-1 text-gray-500">{{exp.level}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Frontend Box -->
+                <div class="flex flex-col items-center px-4 py-6 md:p-6 border-2 rounded-3xl border-gray-300">
+                    <p class="whitespace-nowrap px-5 md:mx-5 text-xl md:text-2xl text-gray-600 font-semibold mb-8">Frontend Development</p>
+                    <div class="grid grid-cols-2 md:grid-cols-2 gap-5 md:gap-6 text-start text-lg">
+                        <div *ngFor="let exp of personalData.frontendExperience" class="flex items-start py-1 md:py-0 mx-2 md:mx-10">
+                            <img class="h-6 w-6 my-1" src={{exp.iconSrc}} alt="">
+                            <div class="grid grid-rows-2 mx-2 md:mx-4">
+                                <p class="text-base md:text-lg font-bold">{{exp.name}}</p>
+                                <p class="text-xs md:text-sm mb-1 text-gray-500">{{exp.level}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- DevOps & Collaboration tools -->
+            <div class="flex flex-col items-center px-4 py-6 md:p-6 border-2 rounded-3xl border-gray-300">
+                <p class="whitespace-nowrap px-5 md:mx-5 text-xl md:text-2xl text-gray-600 font-semibold mb-8">DevOps Tools</p>
+                <div class="grid grid-cols-2 md:grid-cols-6 gap-y-5 gap-x-4 md:gap-6 text-start text-lg">
+                    <div *ngFor="let exp of personalData.toolsExperience" class="flex items-start px-5 md:px-2 py-1 md:py-0 ms:mx-4">
+                        <img class="h-6 w-6 my-1" src={{exp.iconSrc}} alt="">
+                        <div class="grid grid-rows-2 mx-2 md:mx-4">
+                            <p class="text-base md:text-lg font-bold">{{exp.name}}</p>
+                            <p class="text-xs md:text-sm mb-1 text-gray-500">{{exp.level}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="p-1" [routerLink]="['/portfolio']" fragment="projects">
+        <img class="h-10" src="/assets/arrow.png" alt="">
+    </a>
+</div>

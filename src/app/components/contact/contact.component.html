@@ -1,0 +1,14 @@
+<div #sectionRef class="grid grid-cols-1 min-h-screen bg-transparent p-3 md:p-6 md:max-w-6xl">
+    <div class="flex flex-col justify-end items-center my-2 md:my-10 gap-4">
+        <p class="text-sm text-gray-500 ">So kannst du mich am besten</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Kontaktieren</h2>  
+         <a href="mailto:{{personalData.contactMailAdress}}" class="border-2 border-gray-300 rounded-full w-8/10 md:w-2/10  md:h-20 px-4 py-3 md:p-5 items-center justify-center">
+            <div #typingElement  class="typing text-black text-sm md:text-lg pt-1 px-1 md:px-2">
+                {{personalData.contactText}}
+            </div>
+        </a>
+    </div>
+    <div class="flex items-end justify-center">
+        <app-footer></app-footer>
+    </div>
+</div>
